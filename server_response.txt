@@ -1,0 +1,72 @@
+No.     Time           Source                Destination           Protocol Length Info
+    134 15.241652      10.228.211.87         10.228.91.53          UDP      94     15000 → 55852 Len=52
+
+Frame 134: 94 bytes on wire (752 bits), 94 bytes captured (752 bits) on interface en0, id 0
+    Section number: 1
+    Interface id: 0 (en0)
+        Interface name: en0
+        Interface description: Wi-Fi
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Apr 30, 2024 19:25:07.221753000 CDT
+    UTC Arrival Time: May  1, 2024 00:25:07.221753000 UTC
+    Epoch Arrival Time: 1714523107.221753000
+    [Time shift for this packet: 0.000000000 seconds]
+    [Time delta from previous captured frame: 0.030966000 seconds]
+    [Time delta from previous displayed frame: 0.037960000 seconds]
+    [Time since reference or first frame: 15.241652000 seconds]
+    Frame Number: 134
+    Frame Length: 94 bytes (752 bits)
+    Capture Length: 94 bytes (752 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:data]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
+Ethernet II, Src: Intel_04:7b:0d (d4:e9:8a:04:7b:0d), Dst: Apple_eb:41:1e (1c:91:80:eb:41:1e)
+    Destination: Apple_eb:41:1e (1c:91:80:eb:41:1e)
+        Address: Apple_eb:41:1e (1c:91:80:eb:41:1e)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Intel_04:7b:0d (d4:e9:8a:04:7b:0d)
+        Address: Intel_04:7b:0d (d4:e9:8a:04:7b:0d)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 10.228.211.87, Dst: 10.228.91.53
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0xb8 (DSCP: EF PHB, ECN: Not-ECT)
+        1011 10.. = Differentiated Services Codepoint: Expedited Forwarding (46)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 80
+    Identification: 0x38e5 (14565)
+    000. .... = Flags: 0x0
+        0... .... = Reserved bit: Not set
+        .0.. .... = Don't fragment: Not set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 128
+    Protocol: UDP (17)
+    Header Checksum: 0xbcab [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 10.228.211.87
+    Destination Address: 10.228.91.53
+User Datagram Protocol, Src Port: 15000, Dst Port: 55852
+    Source Port: 15000
+    Destination Port: 55852
+    Length: 60
+    Checksum: 0x5f7b [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 2]
+    [Timestamps]
+        [Time since first frame: 0.037960000 seconds]
+        [Time since previous frame: 0.037960000 seconds]
+    UDP payload (52 bytes)
+Data (52 bytes)
+
+0000  53 75 70 70 6f 72 74 20 73 65 73 73 69 6f 6e 20   Support session 
+0010  73 74 61 72 74 65 64 2e 20 54 79 70 65 20 27 65   started. Type 'e
+0020  78 69 74 27 20 74 6f 20 65 6e 64 20 73 75 70 70   xit' to end supp
+0030  6f 72 74 2e                                       ort.
+    Data: 537570706f72742073657373696f6e20737461727465642e20547970652027657869742720746f20656e6420737570706f72742e
+    [Length: 52]

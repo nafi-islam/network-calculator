@@ -1,5 +1,7 @@
 import socket
 
+# Output Menu to the Console
+
 def display_main_menu():
     print("\nChoose type of operations:")
     print("1. Decimal")
@@ -24,6 +26,8 @@ def display_binary_menu():
     print("3. Signed Subtract")
     print("4. Back to main menu")
 
+# Menu Tree
+
 def get_operation_choice(menu_type):
     if menu_type == "decimal":
         display_decimal_menu()
@@ -41,20 +45,12 @@ def get_operation_choice(menu_type):
     else:
         return operations[choice - 1]
 
-# def initiate_support_session(s, serverAddr):
-#     print("Support session started. Type 'exit' to end support.")
-#     while True:
-#         message = input("Enter message: ")
-#         s.sendto(message.encode(), serverAddr)
-#         if message.lower() == "exit":
-#             break
-#         data, _ = s.recvfrom(1024)
-#         print("Server:", data.decode())
-
 def initiate_support_session(s, serverAddr):
     # The client waits for the initial welcome message from the server
     data, _ = s.recvfrom(1024)
     print("Server:", data.decode())
+
+    # Support Initialization
 
     while True:
         message = input("Enter message (type 'exit' to end support): ")
@@ -68,10 +64,13 @@ def initiate_support_session(s, serverAddr):
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 port = 15000
-serverAddr = ('10.230.121.227', port)
+serverAddr = ('10.228.211.87', port)
+
+# Python Socket Initialization
 
 try:
     while True:
+        # User Selection
         display_main_menu()
         menu_choice = int(input("Enter your choice (1-4): "))
         
@@ -84,6 +83,7 @@ try:
             initiate_support_session(s, serverAddr)
             continue
 
+        # Decimal vs Binary Selection
         choice = "decimal" if menu_choice == 1 else "binary" if menu_choice == 2 else None
         if choice:
             s.sendto(choice.encode(), serverAddr)

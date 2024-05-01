@@ -1,5 +1,7 @@
 import socket
 
+# Decimal Operation Function, simple math operations on decimal numbers
+
 def perform_decimal_operation(operation, numbers):
     if operation == "divide" and 0 in numbers[1:]:
         return "Error: Division by zero"
@@ -24,10 +26,14 @@ def perform_decimal_operation(operation, numbers):
     elif operation == "modulo":
         return numbers[0] % numbers[1]
 
+# Binary Operation Function, binary addition and subtraction
+
 def perform_binary_operation(operation, numbers):
-    max_length = max(len(num) for num in numbers)  # Find the maximum length of the binary numbers
+    max_length = max(len(num) for num in numbers)  # Find max length of the binary numbers
     integers = [int(num, 2) for num in numbers]  # Convert binary strings to integers
     
+    # Option Choice -> Operation
+
     if operation == "add":
         result = sum(integers)
     elif operation == "unsigned_subtract":
@@ -35,21 +41,10 @@ def perform_binary_operation(operation, numbers):
     elif operation == "signed_subtract":
         # Convert to two's complement, perform subtraction, and convert back
         a, b = integers
-        two_comp_b = (~b + 1) & ((1 << max_length) - 1)  # Compute two's complement of b
+        two_comp_b = (~b + 1) & ((1 << max_length) - 1)  # Compute two's complement of b 
         result = (a + two_comp_b) & ((1 << max_length) - 1)
 
     return bin(result)[2:].zfill(max_length)  # Return the result as a binary string, padded to maintain length
-
-# def handle_support_session(addr):
-#     server_socket.sendto("Support session started. Type 'exit' to end support.".encode(), addr)
-#     while True:
-#         data, addr = server_socket.recvfrom(1024)
-#         message = data.decode()
-#         if message.lower() == "exit":
-#             server_socket.sendto("Support session ended.".encode(), addr)
-#             break
-#         response = f"Support response: Received your message '{message}'"
-#         server_socket.sendto(response.encode(), addr)
 
 def handle_support_session(addr):
     # Send initial support session start message
@@ -71,15 +66,19 @@ def handle_support_session(addr):
         server_socket.sendto(server_response.encode(), addr)
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-ip = "10.230.121.227"
+ip = "10.228.91.53"
 port = 15000
 server_socket.bind((ip, port))
+
+# Python Socket Initialization
 
 try:
     while True:
         data, addr = server_socket.recvfrom(1024)
         choice = data.decode()
         
+        # Choice Handling
+
         if choice == "support":
             handle_support_session(addr)
         else:
